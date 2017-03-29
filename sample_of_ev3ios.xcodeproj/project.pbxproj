@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F1900F71E8BD285007316C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1900F61E8BD285007316C8 /* AppDelegate.swift */; };
+		3F1900F91E8BD285007316C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1900F81E8BD285007316C8 /* ViewController.swift */; };
+		3F1900FC1E8BD285007316C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1900FA1E8BD285007316C8 /* Main.storyboard */; };
+		3F1900FE1E8BD285007316C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1900FD1E8BD285007316C8 /* Assets.xcassets */; };
+		3F1901011E8BD285007316C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1900FF1E8BD285007316C8 /* LaunchScreen.storyboard */; };
+		3F19010C1E8BD5C0007316C8 /* RobotConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19010B1E8BD5C0007316C8 /* RobotConnection.swift */; };
+		3F19011D1E8BD5E8007316C8 /* BrickButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19010E1E8BD5E8007316C8 /* BrickButtons.swift */; };
+		3F19011E1E8BD5E8007316C8 /* ByteTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19010F1E8BD5E8007316C8 /* ByteTools.swift */; };
+		3F19011F1E8BD5E8007316C8 /* Ev3Brick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901101E8BD5E8007316C8 /* Ev3Brick.swift */; };
+		3F1901201E8BD5E8007316C8 /* Ev3BrickChangedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901111E8BD5E8007316C8 /* Ev3BrickChangedDelegate.swift */; };
+		3F1901211E8BD5E8007316C8 /* Ev3Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901121E8BD5E8007316C8 /* Ev3Command.swift */; };
+		3F1901221E8BD5E8007316C8 /* Ev3Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901131E8BD5E8007316C8 /* Ev3Connection.swift */; };
+		3F1901231E8BD5E8007316C8 /* Ev3Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901141E8BD5E8007316C8 /* Ev3Constants.swift */; };
+		3F1901241E8BD5E8007316C8 /* Ev3DirectCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901151E8BD5E8007316C8 /* Ev3DirectCommand.swift */; };
+		3F1901251E8BD5E8007316C8 /* Ev3Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901161E8BD5E8007316C8 /* Ev3Enums.swift */; };
+		3F1901261E8BD5E8007316C8 /* Ev3Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901171E8BD5E8007316C8 /* Ev3Port.swift */; };
+		3F1901271E8BD5E8007316C8 /* Ev3ReportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901181E8BD5E8007316C8 /* Ev3ReportDelegate.swift */; };
+		3F1901281E8BD5E8007316C8 /* Ev3Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1901191E8BD5E8007316C8 /* Ev3Response.swift */; };
+		3F1901291E8BD5E8007316C8 /* Ev3ResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19011A1E8BD5E8007316C8 /* Ev3ResponseManager.swift */; };
+		3F19012A1E8BD5E8007316C8 /* Ev3SimpleSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19011B1E8BD5E8007316C8 /* Ev3SimpleSounds.swift */; };
+		3F19012B1E8BD5E8007316C8 /* Ev3SystemCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19011C1E8BD5E8007316C8 /* Ev3SystemCommand.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F1900F31E8BD285007316C8 /* sample_of_ev3ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample_of_ev3ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1900F61E8BD285007316C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F1900F81E8BD285007316C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F1900FB1E8BD285007316C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F1900FD1E8BD285007316C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F1901001E8BD285007316C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F1901021E8BD285007316C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F19010B1E8BD5C0007316C8 /* RobotConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotConnection.swift; sourceTree = "<group>"; };
+		3F19010E1E8BD5E8007316C8 /* BrickButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrickButtons.swift; path = EV3IOS/BrickButtons.swift; sourceTree = "<group>"; };
+		3F19010F1E8BD5E8007316C8 /* ByteTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ByteTools.swift; path = EV3IOS/ByteTools.swift; sourceTree = "<group>"; };
+		3F1901101E8BD5E8007316C8 /* Ev3Brick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3Brick.swift; path = EV3IOS/Ev3Brick.swift; sourceTree = "<group>"; };
+		3F1901111E8BD5E8007316C8 /* Ev3BrickChangedDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3BrickChangedDelegate.swift; path = EV3IOS/Ev3BrickChangedDelegate.swift; sourceTree = "<group>"; };
+		3F1901121E8BD5E8007316C8 /* Ev3Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3Command.swift; path = EV3IOS/Ev3Command.swift; sourceTree = "<group>"; };
+		3F1901131E8BD5E8007316C8 /* Ev3Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3Connection.swift; path = EV3IOS/Ev3Connection.swift; sourceTree = "<group>"; };
+		3F1901141E8BD5E8007316C8 /* Ev3Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3Constants.swift; path = EV3IOS/Ev3Constants.swift; sourceTree = "<group>"; };
+		3F1901151E8BD5E8007316C8 /* Ev3DirectCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3DirectCommand.swift; path = EV3IOS/Ev3DirectCommand.swift; sourceTree = "<group>"; };
+		3F1901161E8BD5E8007316C8 /* Ev3Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3Enums.swift; path = EV3IOS/Ev3Enums.swift; sourceTree = "<group>"; };
+		3F1901171E8BD5E8007316C8 /* Ev3Port.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3Port.swift; path = EV3IOS/Ev3Port.swift; sourceTree = "<group>"; };
+		3F1901181E8BD5E8007316C8 /* Ev3ReportDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3ReportDelegate.swift; path = EV3IOS/Ev3ReportDelegate.swift; sourceTree = "<group>"; };
+		3F1901191E8BD5E8007316C8 /* Ev3Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3Response.swift; path = EV3IOS/Ev3Response.swift; sourceTree = "<group>"; };
+		3F19011A1E8BD5E8007316C8 /* Ev3ResponseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3ResponseManager.swift; path = EV3IOS/Ev3ResponseManager.swift; sourceTree = "<group>"; };
+		3F19011B1E8BD5E8007316C8 /* Ev3SimpleSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3SimpleSounds.swift; path = EV3IOS/Ev3SimpleSounds.swift; sourceTree = "<group>"; };
+		3F19011C1E8BD5E8007316C8 /* Ev3SystemCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ev3SystemCommand.swift; path = EV3IOS/Ev3SystemCommand.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F1900F01E8BD285007316C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F1900EA1E8BD285007316C8 = {
+			isa = PBXGroup;
+			children = (
+				3F1900F51E8BD285007316C8 /* sample_of_ev3ios */,
+				3F1900F41E8BD285007316C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F1900F41E8BD285007316C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F1900F31E8BD285007316C8 /* sample_of_ev3ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F1900F51E8BD285007316C8 /* sample_of_ev3ios */ = {
+			isa = PBXGroup;
+			children = (
+				3F19010D1E8BD5D7007316C8 /* ev3ios */,
+				3F19010B1E8BD5C0007316C8 /* RobotConnection.swift */,
+				3F1900F61E8BD285007316C8 /* AppDelegate.swift */,
+				3F1900F81E8BD285007316C8 /* ViewController.swift */,
+				3F1900FA1E8BD285007316C8 /* Main.storyboard */,
+				3F1900FD1E8BD285007316C8 /* Assets.xcassets */,
+				3F1900FF1E8BD285007316C8 /* LaunchScreen.storyboard */,
+				3F1901021E8BD285007316C8 /* Info.plist */,
+			);
+			path = sample_of_ev3ios;
+			sourceTree = "<group>";
+		};
+		3F19010D1E8BD5D7007316C8 /* ev3ios */ = {
+			isa = PBXGroup;
+			children = (
+				3F19010E1E8BD5E8007316C8 /* BrickButtons.swift */,
+				3F19010F1E8BD5E8007316C8 /* ByteTools.swift */,
+				3F1901101E8BD5E8007316C8 /* Ev3Brick.swift */,
+				3F1901111E8BD5E8007316C8 /* Ev3BrickChangedDelegate.swift */,
+				3F1901121E8BD5E8007316C8 /* Ev3Command.swift */,
+				3F1901131E8BD5E8007316C8 /* Ev3Connection.swift */,
+				3F1901141E8BD5E8007316C8 /* Ev3Constants.swift */,
+				3F1901151E8BD5E8007316C8 /* Ev3DirectCommand.swift */,
+				3F1901161E8BD5E8007316C8 /* Ev3Enums.swift */,
+				3F1901171E8BD5E8007316C8 /* Ev3Port.swift */,
+				3F1901181E8BD5E8007316C8 /* Ev3ReportDelegate.swift */,
+				3F1901191E8BD5E8007316C8 /* Ev3Response.swift */,
+				3F19011A1E8BD5E8007316C8 /* Ev3ResponseManager.swift */,
+				3F19011B1E8BD5E8007316C8 /* Ev3SimpleSounds.swift */,
+				3F19011C1E8BD5E8007316C8 /* Ev3SystemCommand.swift */,
+			);
+			name = ev3ios;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F1900F21E8BD285007316C8 /* sample_of_ev3ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F1901051E8BD285007316C8 /* Build configuration list for PBXNativeTarget "sample_of_ev3ios" */;
+			buildPhases = (
+				3F1900EF1E8BD285007316C8 /* Sources */,
+				3F1900F01E8BD285007316C8 /* Frameworks */,
+				3F1900F11E8BD285007316C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sample_of_ev3ios;
+			productName = sample_of_ev3ios;
+			productReference = 3F1900F31E8BD285007316C8 /* sample_of_ev3ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F1900EB1E8BD285007316C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Takehiko YOSHIDA";
+				TargetAttributes = {
+					3F1900F21E8BD285007316C8 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = W62F6QMQZP;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3F1900EE1E8BD285007316C8 /* Build configuration list for PBXProject "sample_of_ev3ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F1900EA1E8BD285007316C8;
+			productRefGroup = 3F1900F41E8BD285007316C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F1900F21E8BD285007316C8 /* sample_of_ev3ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F1900F11E8BD285007316C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1901011E8BD285007316C8 /* LaunchScreen.storyboard in Resources */,
+				3F1900FE1E8BD285007316C8 /* Assets.xcassets in Resources */,
+				3F1900FC1E8BD285007316C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F1900EF1E8BD285007316C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1901241E8BD5E8007316C8 /* Ev3DirectCommand.swift in Sources */,
+				3F1901211E8BD5E8007316C8 /* Ev3Command.swift in Sources */,
+				3F19011F1E8BD5E8007316C8 /* Ev3Brick.swift in Sources */,
+				3F1901251E8BD5E8007316C8 /* Ev3Enums.swift in Sources */,
+				3F1901201E8BD5E8007316C8 /* Ev3BrickChangedDelegate.swift in Sources */,
+				3F19012A1E8BD5E8007316C8 /* Ev3SimpleSounds.swift in Sources */,
+				3F1901261E8BD5E8007316C8 /* Ev3Port.swift in Sources */,
+				3F1900F91E8BD285007316C8 /* ViewController.swift in Sources */,
+				3F1901221E8BD5E8007316C8 /* Ev3Connection.swift in Sources */,
+				3F1900F71E8BD285007316C8 /* AppDelegate.swift in Sources */,
+				3F1901231E8BD5E8007316C8 /* Ev3Constants.swift in Sources */,
+				3F19011E1E8BD5E8007316C8 /* ByteTools.swift in Sources */,
+				3F1901291E8BD5E8007316C8 /* Ev3ResponseManager.swift in Sources */,
+				3F19010C1E8BD5C0007316C8 /* RobotConnection.swift in Sources */,
+				3F19011D1E8BD5E8007316C8 /* BrickButtons.swift in Sources */,
+				3F19012B1E8BD5E8007316C8 /* Ev3SystemCommand.swift in Sources */,
+				3F1901271E8BD5E8007316C8 /* Ev3ReportDelegate.swift in Sources */,
+				3F1901281E8BD5E8007316C8 /* Ev3Response.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F1900FA1E8BD285007316C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F1900FB1E8BD285007316C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F1900FF1E8BD285007316C8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F1901001E8BD285007316C8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F1901031E8BD285007316C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F1901041E8BD285007316C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F1901061E8BD285007316C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = sample_of_ev3ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.chihayafuru.sample-of-ev3ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F1901071E8BD285007316C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = sample_of_ev3ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.chihayafuru.sample-of-ev3ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F1900EE1E8BD285007316C8 /* Build configuration list for PBXProject "sample_of_ev3ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1901031E8BD285007316C8 /* Debug */,
+				3F1901041E8BD285007316C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F1901051E8BD285007316C8 /* Build configuration list for PBXNativeTarget "sample_of_ev3ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1901061E8BD285007316C8 /* Debug */,
+				3F1901071E8BD285007316C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F1900EB1E8BD285007316C8 /* Project object */;
+}
