@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnTone: UIButton!
     @IBOutlet weak var btnRunMotors: UIButton!
     @IBOutlet weak var btnStopMotors: UIButton!
+    @IBOutlet weak var btnBatteryLevel: UIButton!
     @IBOutlet weak var labAlert: UILabel!
     
     var robotConnection : RobotConnection = RobotConnection()
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
         self.btnTone.isEnabled = false
         self.btnRunMotors.isEnabled = false
         self.btnStopMotors.isEnabled = false
+        self.btnBatteryLevel.isEnabled = false
         self.labAlert.isHidden = true
     }
     
@@ -44,6 +46,7 @@ class ViewController: UIViewController {
             self.btnTone.isEnabled = true
             self.btnRunMotors.isEnabled = true
             self.btnStopMotors.isEnabled = true
+            self.btnBatteryLevel.isEnabled = true
             self.labAlert.isHidden = true
         } else {
             self.labAlert.isHidden = false
@@ -63,6 +66,16 @@ class ViewController: UIViewController {
     @IBAction func touchedStop(_ sender: UIButton) {
         print("stop motors")
         self.robotConnection.brick?.directCommand.stopMotor(onPorts: .All, withBrake: true)
+    }
+    
+    @IBAction func batteryLevel(_ sender: Any) {
+        print("battery level")
+        self.robotConnection.brick?.directCommand.getBatteryLevel{ [weak self] (level) in
+            guard let level = level else { return }
+            let controller = UIAlertController(title: "Battery Level", message: "\(String(describing: level))", preferredStyle: UIAlertControllerStyle.alert)
+            controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self?.present(controller, animated: true, completion: {})
+        }
     }
 }
 

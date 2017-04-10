@@ -60,10 +60,19 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GF-Vr-Jo8">
+                                <rect key="frame" x="142" y="382" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Battery Level"/>
+                                <connections>
+                                    <action selector="batteryLevel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0CF-9T-exl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="btnBatteryLevel" destination="4GF-Vr-Jo8" id="BtY-7G-9KS"/>
                         <outlet property="btnConnect" destination="nFC-8k-gg0" id="UtG-7K-eTZ"/>
                         <outlet property="btnRunMotors" destination="v3v-Pz-qql" id="ri1-gH-M7M"/>
                         <outlet property="btnStopMotors" destination="keC-21-K4o" id="MKQ-v2-0N8"/>
