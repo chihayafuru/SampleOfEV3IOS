@@ -13,18 +13,22 @@ class RobotConnection: Ev3ConnectionChangedDelegate {
     var connection: Ev3Connection?
     var brick: Ev3Brick?
     
-    func setup() {
+    func setup() -> Bool {
         NotificationCenter.default.addObserver(self, selector: #selector(accessoryConnected), name: NSNotification.Name.EAAccessoryDidConnect, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(accessoryDisconnected), name: NSNotification.Name.EAAccessoryDidDisconnect, object: nil)
         EAAccessoryManager.shared().registerForLocalNotifications()
         print(EAAccessoryManager.shared().connectedAccessories.count)
         
         let accessory = getEv3Accessory()
+        let result : Bool
         if let a = accessory {
             connect(accessory: a)
+            result = true
         } else {
             print("Not Connected.")
+            result = false
         }
+        return result
     }
     
     private func getEv3Accessory() -> EAAccessory? {

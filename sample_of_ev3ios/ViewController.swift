@@ -9,17 +9,45 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var btnConnect: UIButton!
+    @IBOutlet weak var btnTone: UIButton!
+    @IBOutlet weak var btnRunMotors: UIButton!
+    @IBOutlet weak var btnStopMotors: UIButton!
+    @IBOutlet weak var labAlert: UILabel!
+    
     var robotConnection : RobotConnection = RobotConnection()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.robotConnection.setup()
+        self.btnTone.isEnabled = false
+        self.btnRunMotors.isEnabled = false
+        self.btnStopMotors.isEnabled = false
+        self.labAlert.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func touchConnect(_ sender: UIButton) {
+        print("connect")
+        let result = self.robotConnection.setup()
+        if result {
+            self.btnConnect.isEnabled = false
+            self.btnTone.isEnabled = true
+            self.btnRunMotors.isEnabled = true
+            self.btnStopMotors.isEnabled = true
+            self.labAlert.isHidden = true
+        } else {
+            self.labAlert.isHidden = false
+        }
     }
 
     @IBAction func touchedTone(_ sender: UIButton) {
