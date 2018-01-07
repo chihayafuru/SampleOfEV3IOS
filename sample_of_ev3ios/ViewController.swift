@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnRunMotors: UIButton!
     @IBOutlet weak var btnStopMotors: UIButton!
     @IBOutlet weak var btnBatteryLevel: UIButton!
+    @IBOutlet weak var btnUltrasonic: UIButton!
     @IBOutlet weak var labAlert: UILabel!
     
     var robotConnection : RobotConnection = RobotConnection()
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
         self.btnRunMotors.isEnabled = false
         self.btnStopMotors.isEnabled = false
         self.btnBatteryLevel.isEnabled = false
+        self.btnUltrasonic.isEnabled = false
         self.labAlert.isHidden = true
     }
     
@@ -47,6 +49,7 @@ class ViewController: UIViewController {
             self.btnRunMotors.isEnabled = true
             self.btnStopMotors.isEnabled = true
             self.btnBatteryLevel.isEnabled = true
+            self.btnUltrasonic.isEnabled = true
             self.labAlert.isHidden = true
         } else {
             self.labAlert.isHidden = false
@@ -68,7 +71,7 @@ class ViewController: UIViewController {
         self.robotConnection.brick?.directCommand.stopMotor(onPorts: .All, withBrake: true)
     }
     
-    @IBAction func batteryLevel(_ sender: Any) {
+    @IBAction func batteryLevel(_ sender: UIButton) {
         print("battery level")
         self.robotConnection.brick?.directCommand.getBatteryLevel{ [weak self] (level) in
             guard let level = level else { return }
@@ -76,6 +79,16 @@ class ViewController: UIViewController {
             controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self?.present(controller, animated: true, completion: {})
         }
+    }
+    
+    @IBAction func ultrasonic(_ sender: UIButton) {
+        self.robotConnection.brick?.directCommand.readyRaw(port: .three, mode: 0, receivedRaw: {(data: NSData?) in
+            if let data = data {
+                print("raw data : \(data))")
+            } else {
+                print("raw data : nil)")
+            }
+        })
     }
 }
 

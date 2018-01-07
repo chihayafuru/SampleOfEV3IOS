@@ -53,14 +53,7 @@
                                     <action selector="touchedStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hS5-xz-zNM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fail to connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7T-zm-0vY">
-                                <rect key="frame" x="131" y="86" width="112" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GF-Vr-Jo8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GF-Vr-Jo8" userLabel="btnBatteryLevel">
                                 <rect key="frame" x="142" y="382" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Battery Level"/>
@@ -68,6 +61,21 @@
                                     <action selector="batteryLevel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0CF-9T-exl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHi-Ao-kZl" userLabel="btnUltrasonic">
+                                <rect key="frame" x="152" y="467" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ultrasonic"/>
+                                <connections>
+                                    <action selector="ultrasonic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Gr-pb-rDq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fail to connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7T-zm-0vY">
+                                <rect key="frame" x="131" y="86" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -77,6 +85,7 @@
                         <outlet property="btnRunMotors" destination="v3v-Pz-qql" id="ri1-gH-M7M"/>
                         <outlet property="btnStopMotors" destination="keC-21-K4o" id="MKQ-v2-0N8"/>
                         <outlet property="btnTone" destination="iNM-LL-Mm9" id="1f5-ev-4bD"/>
+                        <outlet property="btnUltrasonic" destination="eHi-Ao-kZl" id="cGM-1v-W07"/>
                         <outlet property="labAlert" destination="p7T-zm-0vY" id="IQo-Ev-9zW"/>
                     </connections>
                 </viewController>
