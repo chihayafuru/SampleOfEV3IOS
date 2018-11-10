@@ -132,53 +132,55 @@ public class Ev3Connection : NSObject, StreamDelegate {
     
     /// writes the data to the outputstream
     private func write(){
-        if writeBuffer.count < 1 {
-            return
-        }
+        self.queue.async {
+            if self.writeBuffer.count < 1 {
+                return
+            }
 
-        canWrite = false
-        
-        if session?.outputStream?.hasSpaceAvailable == false {
-            print("error: stream has no space available")
-            return
-        }
-        
-        let mData = writeBuffer.remove(at: 0)
-        
-        print("Writing data: ")
-        print(ByteTools.asHexString(data: mData))
-        
-        var bytes = mData.bytes.bindMemory(to: UInt8.self, capacity: mData.length)
+            self.canWrite = false
+            
+            if self.session?.outputStream?.hasSpaceAvailable == false {
+                print("error: stream has no space available")
+                return
+            }
+            
+            let mData = self.writeBuffer.remove(at: 0)
+            
+            print("Writing data: ")
+            print(ByteTools.asHexString(data: mData))
+            
+            var bytes = mData.bytes.bindMemory(to: UInt8.self, capacity: mData.length)
 
-        var bytesLeftToWrite: NSInteger = mData.length
-        
-        let bytesWritten = session?.outputStream?.write(bytes, maxLength: bytesLeftToWrite) ?? -1
-        if bytesWritten == -1 {
-            print("error while writing data to bt output stream")
-            canWrite = true
-            return // Some error occurred ...
+            var bytesLeftToWrite: NSInteger = mData.length
+            
+            let bytesWritten = self.session?.outputStream?.write(bytes, maxLength: bytesLeftToWrite) ?? -1
+            if bytesWritten == -1 {
+                print("error while writing data to bt output stream")
+                self.canWrite = true
+                return // Some error occurred ...
+            }
+            
+            bytesLeftToWrite -= bytesWritten
+            bytes = bytes.advanced(by: bytesWritten)
+            
+            if bytesLeftToWrite > 0 {
+                print("error: not enough space in stream")
+                self.queue.async {
+                    self.writeBuffer.insert(NSData(bytes: &bytes, length: bytesLeftToWrite), at: 0)
+                }
+            }
+            
+            print("bytes written \(bytesWritten)")
+            print("write buffer size: \(self.writeBuffer.count)")
+            Thread.sleep(forTimeInterval: self.connSleepTime) //give the ev3 time - too much traffic will disconnect the bt connection
         }
-        
-        bytesLeftToWrite -= bytesWritten
-        bytes = bytes.advanced(by: bytesWritten)
-        
-        if bytesLeftToWrite > 0 {
-            print("error: not enough space in stream")
-            writeBuffer.insert(NSData(bytes: &bytes, length: bytesLeftToWrite), at: 0)
-
-        }
-        
-        print("bytes written \(bytesWritten)")
-        print("write buffer size: \(writeBuffer.count)")
-        Thread.sleep(forTimeInterval: connSleepTime) //give the ev3 time - too much traffic will disconnect the bt connection
     }
     
     /// writes data to the output stream of a accessory. the operation is handled on a own serial queue, 
     /// so that no concurrent write ops should happen
     private func write(data: NSData) {
-        DispatchQueue(label: "com.ev3ios.connection.queue").async {
+        self.queue.async {
             self.dismissCommandsIfNeeded()
-            
             self.writeBuffer.append(data)
             if self.canWrite {
                 self.write()
@@ -193,13 +195,14 @@ public class Ev3Connection : NSObject, StreamDelegate {
     
     /// cleares the writebuffer if it exceeds a given maximum
     private func dismissCommandsIfNeeded(){
-        if( writeBuffer.count > maxBufferSize){
+        if(writeBuffer.count > maxBufferSize){
             for _ in 1...maxBufferSize {
-                writeBuffer.remove(at: 1)
+                self.queue.async {
+                    self.writeBuffer.remove(at: 1)
+                }
             }
             print("cleared write buffer")
         }
-    
     }
     
     /// reads the data from the inputstream if bytes are available. calls the delegates,
@@ -242,13 +245,13 @@ public class Ev3Connection : NSObject, StreamDelegate {
         switch eventCode {
        
         case Stream.Event.hasBytesAvailable:
-            DispatchQueue(label: "com.ev3ios.connection.queue").async {
+            self.queue.async {
                 self.readInBackground()
             }
             break
             
         case Stream.Event.hasSpaceAvailable:
-            DispatchQueue(label: "com.ev3ios.connection.queue").async {
+            self.queue.async {
                 self.canWrite = true
                 self.write()
             }
@@ -260,7 +263,7 @@ public class Ev3Connection : NSObject, StreamDelegate {
             break
             
         case Stream.Event.errorOccurred:
-             print("error on stream")
+            print("error on stream")
             break
             
         default:
