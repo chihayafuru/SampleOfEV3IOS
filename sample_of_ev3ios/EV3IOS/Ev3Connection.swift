@@ -196,10 +196,8 @@ public class Ev3Connection : NSObject, StreamDelegate {
     /// cleares the writebuffer if it exceeds a given maximum
     private func dismissCommandsIfNeeded(){
         if(writeBuffer.count > maxBufferSize){
-            for _ in 1...maxBufferSize {
-                self.queue.async {
-                    self.writeBuffer.remove(at: 1)
-                }
+            self.queue.async {
+                self.writeBuffer.removeAll()
             }
             print("cleared write buffer")
         }
