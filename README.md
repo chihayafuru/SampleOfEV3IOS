@@ -6,8 +6,8 @@
 
 ## Development tools
 
-- Xcode 8.3
-- Swift 3.1
+- Xcode 10.1
+- Swift 4.0
 
 ## License
 
